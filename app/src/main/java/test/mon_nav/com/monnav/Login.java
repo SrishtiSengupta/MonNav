@@ -107,18 +107,10 @@ public class Login extends AppCompatActivity implements
         String email = Plus.AccountApi.getAccountName(mGoogleApiClient);
         Log.d("email", email);
 
-
-    /*        if (mGoogleApiClient.isConnected()) {
-                Toast toast = Toast.makeText(getApplicationContext(), "Please use IIITD account", Toast.LENGTH_SHORT);
-                toast.show();
-                Plus.AccountApi.clearDefaultAccount(mGoogleApiClient);
-                mGoogleApiClient.disconnect();
-            }*/
-
-            // Open the Geofencing Activity
-      Intent intent = new Intent(Login.this, SelectMonument.class);
-            intent.putExtra("email", email);
-            startActivity(intent);
+        // Open the SelectMonumentActivity
+        Intent intent = new Intent(Login.this, SelectMonument.class);
+        intent.putExtra("email", email);
+        startActivity(intent);
 
 
     }
